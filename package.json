@@ -1,0 +1,23 @@
+{
+  "name": "lumina",
+  "version": "1.0.0",
+  "description": "Lumina – Native Agent & Tool Orchestrator",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently --kill-others \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "build": "vite build",
+    "postinstall": "chmod +x cpp-server/build.sh && cpp-server/build.sh"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "electron": "^32.2.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^5.4.11",
+    "wait-on": "^8.0.1"
+  }
+}
